@@ -1,18 +1,5 @@
 function to_roman (num) {
   // your implementation code here
-  var arrDecimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  var arrRoman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
-
-  if (num > 3000 || num < 0) {
-		return "invalid";
-	} else if (num === 0) {
-		return "";
- 	} else {
-		for (var i = 0; i < arrDecimal.length; i++) {
-			if (num >= arrDecimal[i]) 
-			return arrRoman[i] + to_roman(num - arrDecimal[i]);
-	}
-  }
 }
 
 // Drive code
