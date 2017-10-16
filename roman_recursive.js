@@ -1,5 +1,17 @@
 function to_roman (num) {
-  // your implementation code here
+  let tam='';
+ let arab=[1,4,5,9,10,40,50,90,100,400,500,900,1000];
+ let rom=['I','IV','V','IX','X','XL','L','XC','C','CD','D','CM','M'];
+  for(let i = arab.length;i>=0;i--){
+    if (num == ' '){
+      return tam;
+    }
+    if(num >= arab[i]){
+      tam += rom[i]
+      return tam += to_roman(num - arab[i])
+    }
+
+  }
 }
 
 // Drive code
