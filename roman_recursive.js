@@ -1,5 +1,27 @@
 function to_roman (num) {
   // your implementation code here
+  const number = {
+    'M': 1000, 'CM': 900,
+    'D': 500, 'CD': 400,
+    'C': 100, 'XC': 90,
+    'L': 50, 'XL': 40,
+    'X': 10, 'IX': 9,
+    'V': 5, 'IV': 4,
+    'I': 1
+  };
+
+  let result = '';
+
+  if (num === 0) {
+    return result;
+  } else {
+    for (i in number) {
+      if (num >= number[i]) {
+        result += i;
+        return result + to_roman(num -= number[i]);
+      }
+    }
+  }
 }
 
 // Drive code
