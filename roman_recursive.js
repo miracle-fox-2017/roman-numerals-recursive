@@ -1,5 +1,19 @@
 function to_roman (num) {
-  // your implementation code here
+  // menerima angka 1 - 3000, dan me return string angka romawi
+  var hasil = '';
+  var arabic = [1000, 900, 500, 400, 100,90, 50, 40, 10, 9, 5, 4, 1]
+  var romawi = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL' ,'X', 'IX', 'V', 'IV', 'I']
+  if(num === 0){
+    return ''
+  }
+  for(var i = 0; i < arabic.length; i++){
+    if(num >= arabic[i]){
+      hasil += romawi[i]
+      num -= arabic[i]
+    }
+  }
+  return hasil + to_roman(num) //pertama kita ambil si hasil yang memenuhi kondisi >= arabic[i]
+  // lalu rekursif terus sisanya dan kurangi (pada baris ke 12) hingga kondisi stopper
 }
 
 // Drive code
