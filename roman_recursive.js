@@ -1,5 +1,17 @@
-function to_roman (num) {
-  // your implementation code here
+function to_roman(num) {
+  var arrNilai = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var arrAbjad = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  var getHasil = '';
+  if (num === 0) {
+    return '';
+  }
+  for (var i = 0; i <= arrNilai.length; i++) {
+    if (num % arrNilai[i] < num) {
+      getHasil += arrAbjad[i];
+      num -= arrNilai[i];
+      return getHasil + to_roman(num);
+    }
+  }
 }
 
 // Drive code
