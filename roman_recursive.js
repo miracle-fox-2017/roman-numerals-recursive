@@ -1,5 +1,21 @@
+let angka_arab = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+let roman = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','VI','I']
+
 function to_roman (num) {
   // your implementation code here
+  let result = ''
+
+  for(let i =0; i < angka_arab.length; i++){
+    if(num == 0){
+      return ''
+    }else if(num >= angka_arab[i]){
+    //while(){
+      result += roman[i]
+
+      num -= angka_arab[i]
+      return result + to_roman(num)
+    }
+  }
 }
 
 // Drive code
