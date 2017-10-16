@@ -1,5 +1,27 @@
-function to_roman (num) {
-  // your implementation code here
+function to_roman(num){
+    // your implementation code here
+    var hasil="";
+    // var unqNumber={
+    //     "M":1000,"CM":900,"D":500,"CD":400,"C":100,"XC":90,"L":50,"XL":40,"X":10,"IX":9,"V":5,"IV":4,"I":1
+    // };
+    var unqDecimal=[1000,900,500,400,100,90,50,40,10,9,5,4,1];
+    var unqRoman=["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+    if(num === 0){
+        return hasil;
+    }else{
+        // for(i in unqNumber){
+        //     if(num >= unqNumber[i]){
+        //         num-=unqNumber[i];
+        //         return hasil+=i + to_roman(num);
+        //     }
+        // }
+        for(var i=0;i < unqDecimal.length;i++){
+            if(num >= unqDecimal[i]){
+                num-=unqDecimal[i];
+                return hasil+=unqRoman[i] + to_roman(num);
+            }
+        }
+    }
 }
 
 // Drive code
