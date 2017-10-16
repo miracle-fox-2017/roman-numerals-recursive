@@ -1,5 +1,17 @@
 function to_roman (num) {
   // your implementation code here
+  var number = [ 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 ];
+  var roman = [ 'I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M' ];
+  var toroman = '';
+  for (var i =number.length ; i >= 0; i--) {
+    if (num == '') {
+      return toroman;
+    }
+    if(num >= number[i]){
+      toroman +=roman[i]
+      return toroman+= to_roman(num -number[i])
+    }
+  }
 }
 
 // Drive code
