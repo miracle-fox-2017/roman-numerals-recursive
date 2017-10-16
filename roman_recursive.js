@@ -1,5 +1,18 @@
 function to_roman (num) {
   // your implementation code here
+  let roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+  let arabic = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  let result = '';
+  for (let i = 0; i < roman.length; i++) {
+    if (num == 0) {
+      return result;
+    } else if (num >= arabic[i]) {
+      result += roman[i];
+      num -= arabic[i];
+      return result + to_roman(num);
+    }
+  }
+
 }
 
 // Drive code
