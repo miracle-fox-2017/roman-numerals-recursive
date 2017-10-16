@@ -1,5 +1,19 @@
-function to_roman (num) {
-  // your implementation code here
+function to_roman(num) {
+  let roman = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'M'];
+  let angka = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 1000]
+
+  if (num === 0) {
+    return 'Tidak ada'
+  }
+
+  for (let i = angka.length - 1; i >= 0; i--) {
+    if (num === angka[i]) {
+      return roman[i]
+    } else if (num >= angka[i]) {
+      return roman[i] + to_roman(num - angka[i])
+    }
+  }
+
 }
 
 // Drive code
