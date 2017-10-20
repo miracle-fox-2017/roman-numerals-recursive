@@ -3,18 +3,20 @@ function to_roman (num) {
   const arabicNumeral = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
   const romanNumeral  = ['I','IV','V','IX','X','XL','L','XC','C','CD','D','CM','M']
 
-  let result = ''
-
+  if(num === 0){
+    return ``
+  }
   for(let i=arabicNumeral.length; i>=0; i--){
-    while(num >= arabicNumeral[i]){
-      result += romanNumeral[i]
-      to_roman(num-=arabicNumeral[i])
+    // console.log(arabicNumeral[i])
+    if(num === arabicNumeral[i]){
+      return romanNumeral[i]
+    }else if(num >= arabicNumeral[i]){
+      return romanNumeral[i] + to_roman(num - arabicNumeral[i])
     }
   }
-  return result
 }
 
-// Drive code
+// // Drive code
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
 console.log('——————|——————————|———————')
